@@ -1,0 +1,10 @@
+Recursion Cases:
+
+Dynamic Programming
+Backtracking
+Divide and Conquere(Binary Search, Quick Sort, Merge Sort)
+
+->
+Tower of Hanoi
+DFS based Travels (eg: Searching a file in computer)
+
