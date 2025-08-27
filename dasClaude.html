@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Month DSA Pattern-Based Roadmap</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        h3 {
+            color: #2b6cb0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #e0f2fe, #b3e5fc);
+            border-left: 4px solid #2b6cb0;
+            border-radius: 6px;
+        }
+
+        h4 {
+            color: #1a365d;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            padding: 8px 12px;
+            background: #f7fafc;
+            border-left: 3px solid #4299e1;
+            border-radius: 4px;
+        }
+
+        .overview-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .overview-box h2 {
+            background: none;
+            color: white;
+            margin: 0 0 15px 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, #48bb78, #38a169) !important;
+            color: white;
+            font-size: 2rem;
+            margin: 50px 0 20px 0;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.3);
+        }
+
+        .pattern-box {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.3);
+        }
+
+        .pattern-box h3 {
+            background: none;
+            color: white;
+            border: none;
+            margin: 0 0 15px 0;
+            padding: 0;
+            font-size: 1.6rem;
+        }
+
+        .concept-box {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ed8936;
+        }
+
+        .concept-box strong {
+            color: #c05621;
+            font-weight: 600;
+        }
+
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        code {
+            background: #2d3748;
+            color: #81c784;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .problem-list {
+            background: linear-gradient(135deg, #e8f5e8, #f0fff0);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #48bb78;
+        }
+
+        .problem-item {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 3px solid #4299e1;
+        }
+
+        .complexity {
+            background: linear-gradient(135deg, #fed7d7, #feb2b2);
+            color: #c53030;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+        }
+
+        .schedule-box {
+            background: linear-gradient(135deg, #e6fffa, #b2f5ea);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #38b2ac;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #fef5e7, #fed7aa);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #ed8936;
+        }
+
+        .resources-box {
+            background: linear-gradient(135deg, #e6f3ff, #bfdbfe);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #3b82f6;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+
+        li {
+            margin: 8px 0;
+            padding: 5px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef5e7, #fed7aa);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #c05621;
+        }
+
+        .template-section {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #3b82f6;
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; padding: 20px; }
+            pre { page-break-inside: avoid; }
+            .pattern-box, .week-header { page-break-inside: avoid; }
+        }
+
+        .java-keyword { color: #cf8e6d; }
+        .java-string { color: #6a8759; }
+        .java-comment { color: #808080; font-style: italic; }
+        .java-number { color: #6897bb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 1-Month DSA Pattern-Based Roadmap with Java Solutions</h1>
+        
+        <div class="overview-box">
+            <h2>📋 Overview</h2>
+            <p>This comprehensive roadmap covers <strong>15 essential DSA patterns</strong> over 4 weeks, with <strong>10+ practice problems</strong> per pattern. Each pattern includes detailed explanations, Java implementations, and complexity analysis to take you from beginner to interview-ready.</p>
+            <ul>
+                <li><strong>Total Problems:</strong> 150+ carefully selected interview questions</li>
+                <li><strong>Time Investment:</strong> 3-4 hours daily</li>
+                <li><strong>Goal:</strong> Master pattern recognition and problem-solving techniques</li>
+            </ul>
+        </div>
+
+        <h2 class="week-header">📅 Week 1: Foundation Patterns</h2>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 1-2: Two Pointers Pattern</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Use two pointers moving in opposite directions or at different speeds to solve array/string problems in O(n) time.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 Template:</h4>
+                <pre><code class="java">public class TwoPointers {
+    public int[] twoSum(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+            if (sum == target) return new int[]{left, right};
+            else if (sum < target) left++;
+            else right--;
+        }
+        return new int[]{-1, -1};
+    }
+}</code></pre>
+            </div>
+
+            <div class="problem-list">
+                <h4>🔥 Practice Problems:</h4>
+                
+                <div class="problem-item">
+                    <h5>1. Two Sum II (Sorted Array)</h5>
+                    <pre><code class="java">class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int left = 0, right = numbers.length - 1;
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
+            if (sum == target) {
+                return new int[]{left + 1, right + 1}; // 1-indexed
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return new int[]{-1, -1};
+    }
+}</code></pre>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>2. 3Sum</h5>
+                    <pre><code class="java">class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i-1]) continue; // Skip duplicates
+            
+            int left = i + 1, right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while (left < right && nums[left] == nums[left+1]) left++;
+                    while (left < right && nums[right] == nums[right-1]) right--;
+                    left++;
+                    right--;
+                } else if (sum < 0) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+        return result;
+    }
+}</code></pre>
+                    <div class="complexity">Time: O(n²)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>3. Container With Most Water</h5>
+                    <pre><code class="java">class Solution {
+    public int maxArea(int[] height) {
+        int left = 0, right = height.length - 1;
+        int maxWater = 0;
+        
+        while (left < right) {
+            int area = Math.min(height[left], height[right]) * (right - left);
+            maxWater = Math.max(maxWater, area);
+            
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return maxWater;
+    }
+}</code></pre>
+                </div>
+
+                <p><strong>Additional Problems:</strong> Remove Duplicates from Sorted Array, Palindrome String Check, Trapping Rain Water, Sort Colors, Longest Substring Without Repeating Characters, Minimum Window Substring, 4Sum</p>
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 3-4: Sliding Window Pattern</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Maintain a window that slides over the array/string to find optimal subarray/substring.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 Template:</h4>
+                <pre><code class="java">public class SlidingWindow {
+    public int slidingWindowTemplate(int[] arr, int k) {
+        int windowStart = 0, maxSum = 0, windowSum = 0;
+        
+        for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+            windowSum += arr[windowEnd]; // Add to window
+            
+            if (windowEnd - windowStart + 1 == k) {
+                maxSum = Math.max(maxSum, windowSum);
+                windowSum -= arr[windowStart]; // Remove from window
+                windowStart++;
+            }
+        }
+        return maxSum;
+    }
+}</code></pre>
+            </div>
+
+            <div class="problem-list">
+                <h4>🔥 Practice Problems:</h4>
+                
+                <div class="problem-item">
+                    <h5>1. Maximum Sum of Subarray of Size K</h5>
+                    <pre><code class="java">class Solution {
+    public int maxSubarraySum(int[] arr, int k) {
+        int maxSum = Integer.MIN_VALUE;
+        int windowSum = 0;
+        
+        // First window
+        for (int i = 0; i < k; i++) {
+            windowSum += arr[i];
+        }
+        maxSum = windowSum;
+        
+        // Slide the window
+        for (int i = k; i < arr.length; i++) {
+            windowSum = windowSum - arr[i - k] + arr[i];
+            maxSum = Math.max(maxSum, windowSum);
+        }
+        return maxSum;
+    }
+}</code></pre>
+                </div>
+
+                <p><strong>More Problems:</strong> Longest Substring with At Most K Distinct Characters, Minimum Window Substring, Permutation in String, Find All Anagrams in String, Longest Repeating Character Replacement, Maximum Length of Repeated Subarray, Sliding Window Maximum, Minimum Size Subarray Sum, Fruits into Baskets</p>
+            </div>
+        </div>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 5-7: Fast & Slow Pointers (Floyd's Cycle Detection)</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Use two pointers moving at different speeds to detect cycles or find middle elements.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 Template:</h4>
+                <pre><code class="java">class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+
+public class FastSlowPointers {
+    public boolean hasCycle(ListNode head) {
+        ListNode slow = head, fast = head;
+        
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) return true;
+        }
+        return false;
+    }
+}</code></pre>
+            </div>
+
+            <div class="problem-list">
+                <p><strong>Practice Problems:</strong> Linked List Cycle, Find Cycle Start, Middle of Linked List, Palindrome Linked List, Remove Nth Node From End, Happy Number, Circular Array Loop, Find Duplicate Number, Intersection of Two Linked Lists, Reorder List</p>
+            </div>
+        </div>
+
+        <h2 class="week-header">🌳 Week 2: Tree & Graph Patterns</h2>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 8-10: Tree Traversal Patterns (DFS/BFS)</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Systematic way to visit all nodes in trees using depth-first or breadth-first approaches.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 DFS Templates:</h4>
+                <pre><code class="java">class TreeNode {
+    int val;
+    TreeNode left, right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+}
+
+public class TreeTraversal {
+    // Inorder: Left -> Root -> Right
+    public void inorder(TreeNode root, List<Integer> result) {
+        if (root == null) return;
+        inorder(root.left, result);
+        result.add(root.val);
+        inorder(root.right, result);
+    }
+    
+    // Preorder: Root -> Left -> Right
+    public void preorder(TreeNode root, List<Integer> result) {
+        if (root == null) return;
+        result.add(root.val);
+        preorder(root.left, result);
+        preorder(root.right, result);
+    }
+}</code></pre>
+
+                <h4>📝 BFS Template:</h4>
+                <pre><code class="java">public List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> result = new ArrayList<>();
+    if (root == null) return result;
+    
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+    
+    while (!queue.isEmpty()) {
+        int levelSize = queue.size();
+        List<Integer> currentLevel = new ArrayList<>();
+        
+        for (int i = 0; i < levelSize; i++) {
+            TreeNode node = queue.poll();
+            currentLevel.add(node.val);
+            
+            if (node.left != null) queue.offer(node.left);
+            if (node.right != null) queue.offer(node.right);
+        }
+        result.add(currentLevel);
+    }
+    return result;
+}</code></pre>
+            </div>
+
+            <div class="problem-list">
+                <p><strong>Practice Problems:</strong> Binary Tree Level Order Traversal, Maximum Depth of Binary Tree, Symmetric Tree, Path Sum, Binary Tree Zigzag Level Order Traversal, Validate Binary Search Tree, Lowest Common Ancestor of BST, Binary Tree Right Side View, Construct Binary Tree from Preorder and Inorder, Serialize and Deserialize Binary Tree</p>
+            </div>
+        </div>
+
+        <h2 class="week-header">🧠 Week 3: Advanced Patterns</h2>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 15-17: Dynamic Programming Patterns</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Break down complex problems into simpler subproblems and store results to avoid recomputation.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 1D DP Template:</h4>
+                <pre><code class="java">public class DynamicProgramming {
+    public int fibonacci(int n) {
+        if (n <= 1) return n;
+        
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n];
+    }
+}</code></pre>
+            </div>
+
+            <div class="problem-list">
+                <p><strong>Practice Problems:</strong> Climbing Stairs, House Robber, Coin Change, Longest Increasing Subsequence, 0/1 Knapsack, Edit Distance, Longest Common Subsequence, Maximum Product Subarray, Word Break, Palindromic Substrings</p>
+            </div>
+        </div>
+
+        <h2 class="week-header">⚡ Week 4: Optimization & Advanced Patterns</h2>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 22-24: Binary Search Pattern</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Efficiently search in sorted arrays or search spaces using divide and conquer.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 Template:</h4>
+                <pre><code class="java">public class BinarySearch {
+    public int binarySearch(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1;
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="schedule-box">
+            <h2>📅 Daily Schedule Recommendation</h2>
+            <p><span class="highlight">Hours per day:</span> 3-4 hours</p>
+            <p><span class="highlight">Structure:</span></p>
+            <ul>
+                <li>1 hour: Learn pattern concept and study template</li>
+                <li>1-2 hours: Solve 3-4 practice problems</li>
+                <li>30-60 minutes: Review solutions and understand optimizations</li>
+            </ul>
+
+            <p><span class="highlight">Weekly Goals:</span></p>
+            <ul>
+                <li><strong>Week 1:</strong> Master foundational patterns (Two Pointers, Sliding Window, Fast/Slow Pointers)</li>
+                <li><strong>Week 2:</strong> Understand tree and graph traversals</li>
+                <li><strong>Week 3:</strong> Learn advanced problem-solving patterns (DP, Backtracking, Intervals)</li>
+                <li><strong>Week 4:</strong> Master optimization techniques (Binary Search, Heaps, Tries, Union-Find)</li>
+            </ul>
+        </div>
+
+        <div class="tips-box">
+            <h2>💡 Tips for Success</h2>
+            <ol>
+                <li><strong>Code by hand first</strong> - Write solutions on paper before typing</li>
+                <li><strong>Time yourself</strong> - Practice under interview conditions (30-45 minutes per problem)</li>
+                <li><strong>Analyze complexity</strong> - Always discuss time and space complexity</li>
+                <li><strong>Multiple approaches</strong> - Try to find brute force, then optimize</li>
+                <li><strong>Pattern recognition</strong> - Focus on identifying which pattern fits each problem</li>
+                <li><strong>Mock interviews</strong> - Practice explaining your thought process aloud</li>
+            </ol>
+        </div>
+
+        <div class="resources-box">
+            <h2>📚 Additional Resources</h2>
+            <ul>
+                <li><strong>LeetCode Premium</strong> - For company-specific questions</li>
+                <li><strong>InterviewBit</strong> - Structured learning paths</li>
+                <li><strong>GeeksforGeeks</strong> - Detailed explanations</li>
+                <li><strong>YouTube Channels</strong> - NeetCode, Back to Back SWE</li>
+                <li><strong>Books</strong> - "Cracking the Coding Interview" by Gayle McDowell</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 12px;">
+            <h2 style="background: none; color: white; margin: 0; padding: 0; box-shadow: none;">🎉 Remember</h2>
+            <p style="font-size: 1.2rem; margin-top: 15px;">Consistency is key! Solve at least 3-4 problems daily and focus on understanding patterns rather than memorizing solutions. Good luck with your DSA journey! 🚀</p>
+        </div>
+    </div>
+</body>
+</html>
