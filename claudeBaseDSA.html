@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete DSA Roadmap with Full Questions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        h3 {
+            color: #2b6cb0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #e0f2fe, #b3e5fc);
+            border-left: 4px solid #2b6cb0;
+            border-radius: 6px;
+        }
+
+        h4 {
+            color: #1a365d;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            padding: 8px 12px;
+            background: #f7fafc;
+            border-left: 3px solid #4299e1;
+            border-radius: 4px;
+        }
+
+        h5 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+            padding: 6px 10px;
+            background: linear-gradient(135deg, #fef5e7, #fed7aa);
+            border-radius: 6px;
+            border-left: 3px solid #ed8936;
+        }
+
+        .overview-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .overview-box h2 {
+            background: none;
+            color: white;
+            margin: 0 0 15px 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, #48bb78, #38a169) !important;
+            color: white;
+            font-size: 2rem;
+            margin: 50px 0 20px 0;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.3);
+        }
+
+        .pattern-box {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.3);
+            page-break-inside: avoid;
+        }
+
+        .pattern-box h3 {
+            background: none;
+            color: white;
+            border: none;
+            margin: 0 0 15px 0;
+            padding: 0;
+            font-size: 1.6rem;
+        }
+
+        .concept-box {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ed8936;
+        }
+
+        .concept-box strong {
+            color: #c05621;
+            font-weight: 600;
+        }
+
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            page-break-inside: avoid;
+        }
+
+        code {
+            background: #2d3748;
+            color: #81c784;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .problem-list {
+            background: linear-gradient(135deg, #e8f5e8, #f0fff0);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #48bb78;
+        }
+
+        .problem-item {
+            background: white;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 3px solid #4299e1;
+            page-break-inside: avoid;
+        }
+
+        .problem-statement {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .explanation {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .complexity {
+            background: linear-gradient(135deg, #fed7d7, #feb2b2);
+            color: #c53030;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+        }
+
+        .template-section {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #3b82f6;
+        }
+
+        .schedule-box {
+            background: linear-gradient(135deg, #e6fffa, #b2f5ea);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #38b2ac;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #fef5e7, #fed7aa);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #ed8936;
+        }
+
+        .resources-box {
+            background: linear-gradient(135deg, #e6f3ff, #bfdbfe);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #3b82f6;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+
+        li {
+            margin: 8px 0;
+            padding: 5px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef5e7, #fed7aa);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #c05621;
+        }
+
+        .example {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; padding: 20px; }
+            .pattern-box { page-break-inside: avoid; }
+            .problem-item { page-break-inside: avoid; }
+            pre { page-break-inside: avoid; }
+        }
+
+        .table-of-contents {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #cbd5e0;
+        }
+
+        .toc-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Complete 1-Month DSA Roadmap with Full Questions & Solutions</h1>
+        
+        <div class="overview-box">
+            <h2>📋 Overview</h2>
+            <p>This comprehensive roadmap covers <strong>15 essential DSA patterns</strong> over 4 weeks, with detailed problem statements, complete Java solutions, and thorough explanations for each of the <strong>150+ practice problems</strong>.</p>
+            <ul>
+                <li><strong>Total Problems:</strong> 150+ interview questions with full solutions</li>
+                <li><strong>Time Investment:</strong> 3-4 hours daily</li>
+                <li><strong>Goal:</strong> Master pattern recognition and problem-solving techniques</li>
+                <li><strong>Format:</strong> Problem statement → Solution → Explanation → Complexity analysis</li>
+            </ul>
+        </div>
+
+        <div class="table-of-contents">
+            <h2>📚 Table of Contents</h2>
+            <div class="toc-item"><strong>Week 1:</strong> Foundation Patterns (Two Pointers, Sliding Window, Fast & Slow Pointers)</div>
+            <div class="toc-item"><strong>Week 2:</strong> Tree & Graph Patterns (DFS, BFS, Graph Traversal)</div>
+            <div class="toc-item"><strong>Week 3:</strong> Advanced Patterns (Dynamic Programming, Backtracking, Merge Intervals)</div>
+            <div class="toc-item"><strong>Week 4:</strong> Optimization Patterns (Binary Search, Heaps, Tries, Union-Find)</div>
+        </div>
+
+        <h2 class="week-header">📅 Week 1: Foundation Patterns</h2>
+
+        <div class="pattern-box">
+            <h3>🎯 Day 1-2: Two Pointers Pattern</h3>
+            <div class="concept-box">
+                <p><strong>Core Concept:</strong> Use two pointers moving in opposite directions or at different speeds to solve array/string problems in O(n) time. This technique is particularly useful for sorted arrays and when looking for pairs or triplets.</p>
+                <p><strong>When to use:</strong> Problems involving sorted arrays, finding pairs/triplets, palindrome checking, or array manipulation.</p>
+            </div>
+
+            <div class="template-section">
+                <h4>📝 General Template:</h4>
+                <pre><code>public class TwoPointers {
+    public int[] twoSum(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+            if (sum == target) return new int[]{left, right};
+            else if (sum < target) left++;
+            else right--;
+        }
+        return new int[]{-1, -1};
+    }
+}</code></pre>
+            </div>
+
+            <div class="problem-list">
+                <h4>🔥 Complete Practice Problems with Solutions:</h4>
+                
+                <div class="problem-item">
+                    <h5>1. Two Sum II - Input Array Is Sorted</h5>
+                    <div class="overview-box">
+                        <p><strong>Problem:</strong> Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 ≤ index1 < index2 ≤ numbers.length.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: numbers = [2,7,11,15], target = 9
+Output: [1,2]
+Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2.</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int left = 0, right = numbers.length - 1;
+        
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
+            if (sum == target) {
+                return new int[]{left + 1, right + 1}; // 1-indexed
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return new int[]{-1, -1}; // No solution found
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Since the array is sorted, we can use two pointers. Start with left at beginning and right at end. If sum is too small, move left pointer right. If sum is too large, move right pointer left. This guarantees we find the solution in O(n) time.</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>2. 3Sum</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums); // Sort the array first
+        
+        for (int i = 0; i < nums.length - 2; i++) {
+            // Skip duplicates for the first element
+            if (i > 0 && nums[i] == nums[i-1]) continue;
+            
+            int left = i + 1, right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    
+                    // Skip duplicates for second and third elements
+                    while (left < right && nums[left] == nums[left+1]) left++;
+                    while (left < right && nums[right] == nums[right-1]) right--;
+                    
+                    left++;
+                    right--;
+                } else if (sum < 0) {
+                    left++; // Need a larger sum
+                } else {
+                    right--; // Need a smaller sum
+                }
+            }
+        }
+        return result;
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Sort the array first. For each element, use two pointers to find pairs that sum to the negative of the current element. Skip duplicates to avoid duplicate triplets. The key insight is that after sorting, we can use the two-pointer technique for the remaining two elements.</p>
+                    </div>
+                    <div class="complexity">Time: O(n²)</div>
+                    <div class="complexity">Space: O(1) excluding output</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>3. Container With Most Water</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container that can hold the most water.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. The max area is 49.</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public int maxArea(int[] height) {
+        int left = 0, right = height.length - 1;
+        int maxWater = 0;
+        
+        while (left < right) {
+            // Calculate current area
+            int width = right - left;
+            int currentHeight = Math.min(height[left], height[right]);
+            int area = width * currentHeight;
+            
+            maxWater = Math.max(maxWater, area);
+            
+            // Move the pointer with smaller height
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return maxWater;
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Start with the widest possible container (leftmost and rightmost lines). The area is limited by the shorter line. Move the pointer at the shorter line inward, as moving the taller line won't increase the area (width decreases and height is still limited by the shorter line).</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>4. Remove Duplicates from Sorted Array</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order should be kept the same.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        
+        int writeIndex = 1; // Position to write next unique element
+        
+        for (int readIndex = 1; readIndex < nums.length; readIndex++) {
+            if (nums[readIndex] != nums[readIndex - 1]) {
+                nums[writeIndex] = nums[readIndex];
+                writeIndex++;
+            }
+        }
+        
+        return writeIndex; // Length of unique elements
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Use two pointers - readIndex to scan through array and writeIndex to track position for next unique element. Since array is sorted, duplicates are adjacent. Only write elements that differ from the previous element.</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>5. Valid Palindrome</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public boolean isPalindrome(String s) {
+        int left = 0, right = s.length() - 1;
+        
+        while (left < right) {
+            // Skip non-alphanumeric characters from left
+            while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
+                left++;
+            }
+            
+            // Skip non-alphanumeric characters from right
+            while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
+                right--;
+            }
+            
+            // Compare characters (convert to lowercase)
+            if (Character.toLowerCase(s.charAt(left)) != 
+                Character.toLowerCase(s.charAt(right))) {
+                return false;
+            }
+            
+            left++;
+            right--;
+        }
+        
+        return true;
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Use two pointers from both ends. Skip non-alphanumeric characters and compare remaining characters after converting to lowercase. If any pair doesn't match, it's not a palindrome.</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>6. Trapping Rain Water</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public int trap(int[] height) {
+        if (height.length == 0) return 0;
+        
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
+        int totalWater = 0;
+        
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= leftMax) {
+                    leftMax = height[left];
+                } else {
+                    totalWater += leftMax - height[left];
+                }
+                left++;
+            } else {
+                if (height[right] >= rightMax) {
+                    rightMax = height[right];
+                } else {
+                    totalWater += rightMax - height[right];
+                }
+                right--;
+            }
+        }
+        
+        return totalWater;
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Use two pointers and track the maximum height seen so far from both sides. Water at position i is min(leftMax, rightMax) - height[i]. Move the pointer with smaller height as it determines the water level.</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>7. Sort Colors (Dutch National Flag)</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with colors in order red, white, and blue (represented by integers 0, 1, and 2).</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public void sortColors(int[] nums) {
+        int left = 0, right = nums.length - 1;
+        int current = 0;
+        
+        while (current <= right) {
+            if (nums[current] == 0) {
+                // Swap with left pointer and move both
+                swap(nums, current, left);
+                left++;
+                current++;
+            } else if (nums[current] == 2) {
+                // Swap with right pointer, move right pointer back
+                swap(nums, current, right);
+                right--;
+                // Don't increment current as we need to check swapped element
+            } else {
+                // nums[current] == 1, just move current
+                current++;
+            }
+        }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Use three pointers: left for next position of 0, right for next position of 2, and current for scanning. Swap 0s to left, 2s to right, and leave 1s in the middle. This partitions the array in one pass.</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>8. Move Zeroes</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public void moveZeroes(int[] nums) {
+        int writeIndex = 0;
+        
+        // First pass: move all non-zero elements to the front
+        for (int readIndex = 0; readIndex < nums.length; readIndex++) {
+            if (nums[readIndex] != 0) {
+                nums[writeIndex] = nums[readIndex];
+                writeIndex++;
+            }
+        }
+        
+        // Second pass: fill remaining positions with zeros
+        for (int i = writeIndex; i < nums.length; i++) {
+            nums[i] = 0;
+        }
+    }
+}</code></pre>
+
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong> Use two pointers - one for reading through the array, another for writing non-zero elements. First pass moves all non-zero elements to the front, second pass fills remaining positions with zeros.</p>
+                    </div>
+                    <div class="complexity">Time: O(n)</div>
+                    <div class="complexity">Space: O(1)</div>
+                </div>
+
+                <div class="problem-item">
+                    <h5>9. 4Sum</h5>
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Given an array nums of n integers, return an array of all unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that nums[a] + nums[b] + nums[c] + nums[d] == target.</p>
+                        <p><strong>Example:</strong></p>
+                        <div class="example">Input: nums = [1,0,-1,0,-2,2], target = 0
+Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]</div>
+                    </div>
+                    
+                    <h5>Solution:</h5>
+                    <pre><code>class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        
+        for (int i = 0; i < nums.length - 3; i++) {
+            if (i > 0 && nums[i] == nums[i-1]) continue;
+            
+            
